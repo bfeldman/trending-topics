@@ -2,18 +2,18 @@ import React from 'react'
 import './App.css';
 
 const themes = {
-  lightTheme : {
+  light : {
     bgColor: 'rgb(247, 249, 250)',
     mainFontColor: 'rgb(15, 20, 25)',
     secondaryFontColor: 'rgb(91, 112, 131)'
   },
 
-  darkTheme : {
+  dark : {
     bgColor: 'rgb(21,24,28)',
     mainFontColor: 'rgb(217, 217, 217)',
     secondaryFontColor: 'rgb(110, 118, 125)'
   },
-  dimTheme : {
+  dim : {
     bgColor: 'rgb(25,39,52)',
     mainFontColor: 'rgb(255, 255, 255)',
     secondaryFontColor: 'rgb(136, 153, 166)'
@@ -26,9 +26,9 @@ class App extends React.Component {
     locale: "United States",
     title: "Title",
     desc: "Description goes here",
-    tweetCount: 0,
+    tweetCount: "10.7K",
     themeName: "Light",
-    theme: themes.lightTheme
+    theme: themes.light
   }
   
   handleChange = (event) => {
@@ -37,7 +37,7 @@ class App extends React.Component {
   
   handleThemeChange = (event) => {
     this.setState({
-      theme: themes[event.target.value],
+      theme: themes[event.target.value.toLowerCase()],
       themeName: event.target.value
     })
   }
@@ -80,9 +80,9 @@ class App extends React.Component {
             name="theme"
             onChange={this.handleThemeChange}
           >
-            <option value="lightTheme">Light</option>
-            <option value="darkTheme">Dark</option>
-            <option value="dimTheme">Dim</option>
+            <option value="Light">Light</option>
+            <option value="Dark">Dark</option>
+            <option value="Dim">Dim</option>
           </select>
           
         </div>
@@ -121,7 +121,10 @@ class App extends React.Component {
               {this.state.tweetCount + " Tweets"}
           </div>
         
-          <div className="dots">
+          <div
+            className="dots"
+            style={{ color: this.state.theme['secondaryFontColor']}}
+          >
             <span>...</span>
           </div>
           
