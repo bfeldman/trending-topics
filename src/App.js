@@ -44,7 +44,11 @@ class App extends React.Component {
   
   render() {
     return (
+      <>
+      
       <div className="container">
+        
+        <h1>The Trending Topic Generator</h1>
         
         <div className="edit-form">
           <span className="label">Locale/Category:</span>
@@ -137,6 +141,13 @@ class App extends React.Component {
         </div>
         
       </div>
+      
+      <footer>
+        <p>This dumb thing was made by <a href="https://twitter.com/bafeldman">Brian Feldman</a></p>
+      </footer>
+      
+      </>
+        
     );
   }
 }
