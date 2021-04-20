@@ -23,9 +23,9 @@ const themes = {
 class App extends React.Component {
   
   state = {
-    locale: "United States",
-    title: "Title",
-    desc: "Description goes here",
+    category: "Trending in United States",
+    topic: "Insert topic",
+    desc: "Put a description here",
     tweetCount: "10.7K",
     themeName: "Light",
     theme: themes.light
@@ -47,20 +47,24 @@ class App extends React.Component {
       <div className="container">
         
         <div className="edit-form">
+          <span className="label">Locale/Category:</span>
+          <span class="smalltext">Alternatively, "[topic] · Trending"</span>
           <input
             type="text"
-            name="locale"
-            value={this.state.locale}
+            name="category"
+            value={this.state.category}
             onChange={this.handleChange}
           />
           
+          <span className="label">Topic:</span>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
+            name="topic"
+            value={this.state.topic}
             onChange={this.handleChange}
           />
           
+          <span className="label">Description:</span>
           <textarea
             type="text"
             name="desc"
@@ -68,6 +72,7 @@ class App extends React.Component {
             onChange={this.handleChange}
           />
           
+          <span className="label">Tweet count:</span>
           <input
             type="text"
             name="tweetCount"
@@ -75,6 +80,7 @@ class App extends React.Component {
             onChange={this.handleChange}
           />
           
+          <span className="label">Theme:</span>
           <select
             value={this.state.themeName}
             name="theme"
@@ -92,17 +98,17 @@ class App extends React.Component {
           style={{ background: this.state.theme['bgColor']}}
         >
           <div
-            className="locale"
+            className="category"
             style={{ color: this.state.theme['secondaryFontColor']}}
           >
-              Trending in {this.state.locale}
+              {this.state.category}
           </div>
           
           <div
-            className="title"
+            className="topic"
             style={{ color: this.state.theme['mainFontColor']}}
           >
-              {this.state.title}
+              {this.state.topic}
           </div>
           
           <div
