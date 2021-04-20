@@ -97,7 +97,7 @@ textarea {
 .dots {
   display: inline-block;
   position: absolute;
-  top: 0px;
+  top: 5px;
   right: 16px;
   font-weight: 400;
 }
