@@ -1,9 +1,23 @@
+@font-face {
+  font-family: "TwitterChirp";
+  src: url("./fonts/ChirpRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TwitterChirp";
+  src: url("./fonts/ChirpBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-family: "TwitterChirp", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     background-color: #dbd7d7;
 }
 
@@ -73,7 +87,7 @@ textarea {
   /* color: rgb(136, 153, 166); */
 }
 
-.title {
+.topic {
   font-size: 15px;
   font-weight: 700;
   line-height: 20px;
@@ -100,4 +114,5 @@ textarea {
   top: 5px;
   right: 16px;
   font-weight: 400;
+  user-select: none; 
 }
